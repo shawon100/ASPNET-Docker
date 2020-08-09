@@ -2,11 +2,11 @@ FROM mcr.microsoft.com/dotnet/core/sdk:2.1 AS build
 WORKDIR /source
 
 COPY *.sln .
-COPY aspnetapp/*.csproj ./aspnetapp/
+COPY MVC_Core_HelloWorld/*.csproj ./MVC_Core_HelloWorld/
 RUN dotnet restore
 
-COPY aspnetapp/. ./aspnetapp/
-WORKDIR /source/aspnetapp
+COPY MVC_Core_HelloWorld/. ./MVC_Core_HelloWorld/
+WORKDIR /source/MVC_Core_HelloWorld
 
 RUN dotnet publish -c Release -o /app
 
